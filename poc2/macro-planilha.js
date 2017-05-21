@@ -1,24 +1,36 @@
-//  1. Enter sheet name where data is to be written below
-//var SHEET_NAME = "Sheet1";
+//  1. Crie uma nova planilha em https://docs.google.com/spreadsheets/
 
-//  2. Run > setup
-//
-//  3. Publish > Deploy as web app
-//    - enter Project Version name and click 'Save New Version'
-//    - set security level and enable service (most likely execute as 'me' and access 'anyone, even anonymously)
-//
-//  4. Copy the 'Current web app URL' and post this in your form/script action
+// 2. Nesta planilha, adicione na primeira linha e coluna (A1) o valor 
+//   "Timestamp" e ao seu lado (B1) o valor "instrucao" (não use aspas)
+
+// 3. Clique em "Ferramentas > Editor de Scripts" no seu Google Planilhas.
+//    Irá abrir um editor de scripts
+// 4. Copie e cole todo esse código (arquivo macro-planilha.js) para o editor
+//    de scripts que abriu
+// 5. Salve (clique no "disquete", ou aperte as telas 'Ctrl + S' se não sabe
+//    o que é um ícone de disquete). Qualquer nome de projeto serve. Sugerido
+//    "poc2"
+// 6. Em "Select function" selecione "Setup".
+// 7. Clique em "Run" (é um triângulo apontando para direita, entre um relógio
+//    e um inseto)
+// 8. Clique em "Review Permissions" na caixa que irá aparecer. Selecione sua
+//    conta pessoal
+// 9. Publish > Deploy as web app
+//    - "Project version" pode ser valor 1
+//    - Execute the app as: "me" (vai rodar como se fosse você)
+//    - Who has access to the app: "Anyone, even anonymous"
+// 10. Copie a URL de "Current web app URL:" e cole na respectíva área da sua interface
 //
 //  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)
 
 var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
 
 // If you don't want to expose either GET or POST methods you can comment out the appropriate function
-function doGet(e){
+function doGet(e) {
   return handleResponse(e);
 }
 
-function doPost(e){
+function doPost(e) {
   return handleResponse(e);
 }
 
@@ -38,13 +50,13 @@ function handleResponse(e) {
     // we'll assume header is in row 1 but you can override with header_row in GET/POST data
     var headRow = e.parameter.header_row || 1;
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-    var nextRow = sheet.getLastRow()+1; // get next row
+    var nextRow = sheet.getLastRow() + 1; // get next row
     var row = [];
     // loop through the header columns
-    for (i in headers){
-      if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column
+    for (i in headers) {
+      if (headers[i] == "Timestamp") { // special case if you include a 'Timestamp' column
         row.push(new Date());
-      } else if (headers[i] != "pagina") {// } else { // else use header name to get data
+      } else if (headers[i] != "pagina" && headers[i] != "webapp-url") {
         row.push(e.parameter[headers[i]]);
       }
     }
@@ -52,19 +64,19 @@ function handleResponse(e) {
     sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
     // return json success results
     return ContentService
-          .createTextOutput(JSON.stringify({"result":"success", "row": nextRow}))
-          .setMimeType(ContentService.MimeType.JSON);
-  } catch(e){
+      .createTextOutput(JSON.stringify({ "result": "success", "row": nextRow }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (e) {
     // if error return this
     return ContentService
-          .createTextOutput(JSON.stringify({"result":"error", "error": e}))
-          .setMimeType(ContentService.MimeType.JSON);
+      .createTextOutput(JSON.stringify({ "result": "error", "error": e }))
+      .setMimeType(ContentService.MimeType.JSON);
   } finally { //release lock
     lock.releaseLock();
   }
 }
 
 function setup() {
-    var doc = SpreadsheetApp.getActiveSpreadsheet();
-    SCRIPT_PROP.setProperty("key", doc.getId());
+  var doc = SpreadsheetApp.getActiveSpreadsheet();
+  SCRIPT_PROP.setProperty("key", doc.getId());
 }
