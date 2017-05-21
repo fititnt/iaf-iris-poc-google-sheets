@@ -8,3 +8,12 @@ Veja [a documentação do exemplo simples](simples/).
   - <https://fititnt.github.io/iaf-iris-poc-google-sheets/simples/>
 - A planilha publicamente editavel
   - <https://docs.google.com/spreadsheets/d/1jNVgLi_dRPO413EmLBjr5rNTWUOt2On67OOJ6gdr5xE/edit>
+
+# Prova de Conceito 2: Entrada por voz com comando salvo em planilha
+
+Veja [a documentação da prova de conceito 2](poc2/).
+
+- O formulário de entrada
+  - <https://fititnt.github.io/iaf-iris-poc-google-sheets/poc2/>
+- A planilha publicamente editavel
+  - <https://docs.google.com/spreadsheets/d/1Xq2itPNgnnsMrOOeS3X8lWttnh9EBDpeGIYN0A8UBss/edit>

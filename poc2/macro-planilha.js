@@ -1,8 +1,6 @@
-//  1. Crie uma nova planilha em https://docs.google.com/spreadsheets/
-
+// 1. Crie uma nova planilha em https://docs.google.com/spreadsheets/
 // 2. Nesta planilha, adicione na primeira linha e coluna (A1) o valor 
 //   "Timestamp" e ao seu lado (B1) o valor "instrucao" (não use aspas)
-
 // 3. Clique em "Ferramentas > Editor de Scripts" no seu Google Planilhas.
 //    Irá abrir um editor de scripts
 // 4. Copie e cole todo esse código (arquivo macro-planilha.js) para o editor
@@ -20,8 +18,6 @@
 //    - Execute the app as: "me" (vai rodar como se fosse você)
 //    - Who has access to the app: "Anyone, even anonymous"
 // 10. Copie a URL de "Current web app URL:" e cole na respectíva área da sua interface
-//
-//  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)
 
 var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
 
