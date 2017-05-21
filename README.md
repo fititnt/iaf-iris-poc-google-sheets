@@ -1,5 +1,10 @@
-# iaf-iris-poc-google-sheets
+# Prova de Conceito de [IAF-Íris](https://github.com/fititnt/iaf-iris) com Google Planilhas
 
-- Planilha publica: https://docs.google.com/spreadsheets/d/1jNVgLi_dRPO413EmLBjr5rNTWUOt2On67OOJ6gdr5xE/edit?usp=sharing
-- See http://railsrescue.com/blog/2015-05-28-step-by-step-setup-to-send-form-data-to-google-sheets/
-- See https://github.com/AishwaryT/Google-app-script-crud
+## Exemplo Simples: salvar dados de formulário de contato
+
+Veja [a documentação do exemplo simples](simples/).
+
+- O formulário de entrada
+  - <https://fititnt.github.io/iaf-iris-poc-google-sheets/simples/>
+- A planilha publicamente editavel
+  - <https://docs.google.com/spreadsheets/d/1jNVgLi_dRPO413EmLBjr5rNTWUOt2On67OOJ6gdr5xE/edit>
