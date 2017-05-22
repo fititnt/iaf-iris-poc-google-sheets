@@ -57,3 +57,17 @@ $("#formulario").submit(function (event) {
   // Prevent default posting of form
   event.preventDefault();
 });
+
+// Carrega itens
+if (localStorage.getItem('webapp-url')) {
+  $('#webapp-url').val(localStorage.getItem('webapp-url'));
+}
+if (localStorage.getItem('pagina')) {
+  $('#pagina').val(localStorage.getItem('pagina'));
+}
+
+// Salva itens
+$('#salvar').on('click', function() {
+  localStorage.setItem('webapp-url', $('#webapp-url').val())
+  localStorage.setItem('pagina', $('#pagina').val())
+})

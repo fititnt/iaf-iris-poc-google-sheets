@@ -10,22 +10,39 @@
 
 <body>
   <form id="formulario">
+    <input type="hidden" name="id" value="" disabled>
+    <input type="hidden" name="created" value="" disabled>
+    <input type="hidden" name="updated" value="" disabled>
+    <input type="hidden" name="type" value="generic">
+    <input type="hidden" name="medatada" value="">
     <p>
-      <label for="instrucao">Instrução</label> <br>
-      <input id="instrucao" name="instrucao" type="text" class="speech-input" style="width: 800px">
+      <label for="annotations">Instrução</label> <br>
+      <input id="annotations" name="annotations" type="text" class="speech-input" style="width: 800px" required>
     </p>
+    <input type="hidden" name="param_datetime_1" value="">
+    <input type="hidden" name="param_datetime_2" value="">
+    <input type="hidden" name="param_datetime_3" value="">
+    <input type="hidden" name="param_integer_1" value="">
+    <input type="hidden" name="param_integer_2" value="">
+    <input type="hidden" name="param_integer_3" value="">
+    <input type="hidden" name="param_string_1" value="">
+    <input type="hidden" name="param_string_2" value="">
+    <input type="hidden" name="param_string_3" value="">
+    <hr />
     <p>
       <label for="webapp-url">WebApp URL</label> <br>
-      <input id="webapp-url" name="webapp-url" type="text" value=""  style="width: 800px">
+      <input id="webapp-url" name="webapp-url" type="text" value="" style="width: 800px"
+        required>
     </p>
     <p>
       <label for="pagina">Página da planilha a ser salvo</label> <br>
-      <input id="pagina" name="pagina" type="text" value="eventos">
+      <input id="pagina" name="pagina" type="text" value="eventos" required>
     </p>
     <div id='success'></div>
     <button type='submit'>Submeter</button>
-    <button id="salvar">Lembrar meus dados</button>
   </form>
+  <hr />
+  <button id="salvar">Lembrar meus dados</button>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src='script-interface.js'></script>

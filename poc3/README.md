@@ -6,8 +6,8 @@ dados".
 ## Como recriar do zero
 
 1. Crie uma nova planilha em https://docs.google.com/spreadsheets/
-2. Nesta planilha, adicione na primeira linha e coluna (A1) o valor 
-  "Timestamp" e ao seu lado (B1) o valor "instrucao" (não use aspas)
+2. Nesta planilha, adicione na primeira linha campos equivalentes a
+  [events-metadata.tsv](events-metadata.tsv)
 3. Clique em "Ferramentas > Editor de Scripts" no seu Google Planilhas.
    Irá abrir um editor de scripts
 4. Copie e cole todo esse código arquivo [macro-planilha.js](macro-planilha.js) para o editor
