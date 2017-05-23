@@ -36,7 +36,9 @@
       <div class="tab-pane fade in active" id="enviar-evento" role="tabpanel" aria-labelledby="tab1"
         aria-hidden="false" tabindex="0">
 
-        <form id="formulario">
+        <h2>Adicionar novo evento</h2>
+
+        <form id="form-enviar">
           <input type="hidden" name="id" value="" disabled>
           <input type="hidden" name="created" value="" disabled>
           <input type="hidden" name="updated" value="" disabled>
@@ -57,6 +59,22 @@
           <input type="hidden" name="param_string_2" value="">
           <input type="hidden" name="param_string_3" value="">
           <hr />
+
+          <div id='success'></div>
+          <button type='submit'>Submeter</button>
+        </form>
+        <hr />
+
+      </div>
+      <div class="tab-pane fade" id="ler-eventos" role="tabpanel" aria-labelledby="tab2"
+        aria-hidden="true" tabindex="0">
+        <h2>Ler informações</h2>
+        <p>No momento esta funcionalidade não está implementada</p>
+      </div>
+      <div class="tab-pane fade" id="configuracao" role="tabpanel" aria-labelledby="tab3"
+        aria-hidden="true" tabindex="0">
+        <h2>Configuração</h2>
+        <form id="form-configuracao">
           <p>
             <label for="webapp-url">WebApp URL</label> <br>
             <input id="webapp-url" name="webapp-url" type="text" value="" style="width: 800px"
@@ -66,20 +84,9 @@
             <label for="pagina">Página da planilha a ser salvo</label> <br>
             <input id="pagina" name="pagina" type="text" value="eventos" required>
           </p>
-          <div id='success'></div>
-          <button type='submit'>Submeter</button>
-        </form>
-        <hr />
-        <button id="salvar">Lembrar meus dados</button>
 
-      </div>
-      <div class="tab-pane fade" id="ler-eventos" role="tabpanel" aria-labelledby="tab2"
-        aria-hidden="true" tabindex="0">
-        <p>My ler-eventos.</p>
-      </div>
-      <div class="tab-pane fade" id="configuracao" role="tabpanel" aria-labelledby="tab3"
-        aria-hidden="true" tabindex="0">
-        <p>Configurações</p>
+          <button id="salvar">Lembrar meus dados</button>
+        </form>
       </div>
     </div>
   </div>

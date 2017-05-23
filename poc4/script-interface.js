@@ -1,6 +1,17 @@
 // Variable to hold request
 var request;
 
+$('#form-configuracao').on('submit', function(event) {
+  event.preventDefault();
+})
+
+// Salva itens
+$('#salvar').on('click', function () {
+  localStorage.setItem('poc4-webapp-url', $('#webapp-url').val())
+  localStorage.setItem('poc4-pagina', $('#pagina').val())
+})
+
+
 // Bind to the submit event of our form
 $("#formulario").submit(function (event) {
 
@@ -60,19 +71,11 @@ $("#formulario").submit(function (event) {
 
 // Carrega itens
 if (localStorage.getItem('webapp-url')) {
-  $('#webapp-url').val(localStorage.getItem('webapp-url'));
+  $('#webapp-url').val(localStorage.getItem('poc4-webapp-url'));
 }
 if (localStorage.getItem('pagina')) {
-  $('#pagina').val(localStorage.getItem('pagina'));
+  $('#pagina').val(localStorage.getItem('poc4-pagina'));
 }
-
-// Salva itens
-$('#salvar').on('click', function () {
-  localStorage.setItem('webapp-url', $('#webapp-url').val())
-  localStorage.setItem('pagina', $('#pagina').val())
-})
-
-
 
 /* 
   An Accessible Bootstrap Tab Panel with WAI-ARIA, inicio
