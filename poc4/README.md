@@ -1,4 +1,4 @@
-# Prova de Conceito 3: Entrada por voz com comando salvo em planilha, variante
+# Prova de Conceito 4: Entrada por voz com comando salvo em planilha, variante
 Acesse <https://fititnt.github.io/iaf-iris-poc-google-sheets/poc3/> para
 ver a versão atual. O formulário você deverá cadastrar com botão "Lembrar meus
 dados".
@@ -6,8 +6,8 @@ dados".
 ## Como recriar do zero
 
 1. Crie uma nova planilha em https://docs.google.com/spreadsheets/
-2. Nesta planilha, adicione na primeira linha campos equivalentes a
-  [events-metadata.tsv](events-metadata.tsv)
+2. Nesta planilha, importe a planilha de dados
+  [events.tsv](events.tsv)
 3. Clique em "Ferramentas > Editor de Scripts" no seu Google Planilhas.
    Irá abrir um editor de scripts
 4. Copie e cole todo esse código arquivo [macro-planilha.js](macro-planilha.js) para o editor
