@@ -1,3 +1,7 @@
 .si-wrapper {
   width: 100%;
 }
+#configuracao-setar-teste {
+  float: right;
+  margin-bottom: 1em;
+}

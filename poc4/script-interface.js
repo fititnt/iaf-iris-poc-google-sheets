@@ -1,14 +1,21 @@
 // Variable to hold request
 var request;
 
+var planilhaPadrao = {
+  planilha: 'https://docs.google.com/spreadsheets/d/1QPmutg1CHlXCLe_gpIb0l9fK-BurGUMn4UvGOvHZS60/edit?usp=sharing',
+  webapp: 'https://script.google.com/macros/s/AKfycbysJEEDWv2EawLDaSVOLRya--8c5jy4k5T0BZkLH6T6NsKDzJ-R/exec',
+  pagina: 'eventos'
+}
+
 $('#form-configuracao').on('submit', function(event) {
   event.preventDefault();
 })
 
 // Salva itens
-$('#salvar').on('click', function () {
+$('#configuracao-salvar').on('click', function () {
+  localStorage.setItem('poc4-planilha-url', $('#planilha-url').val())
   localStorage.setItem('poc4-webapp-url', $('#webapp-url').val())
-  localStorage.setItem('poc4-pagina', $('#pagina').val())
+  localStorage.setItem('poc4-pagina', $('#configuracao-pagina-campo').val())
 })
 
 
@@ -29,6 +36,32 @@ function uiAviso(mensagem, isErro) {
   ');
 }
 
+/**
+ * Retorna se a planilha usada atualmente é a padrão
+ */
+function isUsandoPadrao() {
+  if ($('#webapp-url').val() !== planilhaPadrao.webapp) {
+    console.log('isUsandoPadrao: webapp-url [' + $('#webapp-url').val() + '] e padrão [' + planilhaPadrao.webapp + ']');
+    return false;
+  }
+  if ($('#configuracao-pagina-campo').val() !== planilhaPadrao.pagina) {
+    console.log('isUsandoPadrao: pagina [' + $('#configuracao-pagina-campo').val() + '] e padrão [' + planilhaPadrao.pagina + ']');
+    return false;
+  }
+
+  return true;
+}
+
+/**
+ * Define como planilha de trabalho a padrão de teste
+ */
+function setPlanilhaPadrao() {
+  $('#planilha-url').val(planilhaPadrao.planilha);
+  $('#webapp-url').val(planilhaPadrao.webapp);
+  $('#configuracao-pagina-campo').val(planilhaPadrao.pagina);
+}
+
+$('#configuracao-setar-teste').on('click', setPlanilhaPadrao);
 
 // Bind to the submit event of our form
 $("#form-enviar").submit(function (event) {
@@ -98,6 +131,9 @@ $("#form-enviar").submit(function (event) {
 });
 
 // Carrega itens
+if (localStorage.getItem('planilha-url')) {
+  $('#planilha-url').val(localStorage.getItem('poc4-planilha-url'));
+}
 if (localStorage.getItem('webapp-url')) {
   $('#webapp-url').val(localStorage.getItem('poc4-webapp-url'));
 }

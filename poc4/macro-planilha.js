@@ -1,13 +1,13 @@
 // 1. Crie uma nova planilha em https://docs.google.com/spreadsheets/
 // 2. Nesta planilha, adicione na primeira linha campos equivalentes a
-//    [events-metadata.tsv](events-metadata.tsv)
+//    [events.tsv](events.tsv)
 // 3. Clique em "Ferramentas > Editor de Scripts" no seu Google Planilhas.
 //    Irá abrir um editor de scripts
 // 4. Copie e cole todo esse código (arquivo macro-planilha.js) para o editor
 //    de scripts que abriu
 // 5. Salve (clique no "disquete", ou aperte as telas 'Ctrl + S' se não sabe
 //    o que é um ícone de disquete). Qualquer nome de projeto serve. Sugerido
-//    "poc2"
+//    "poc4"
 // 6. Em "Select function" selecione "Setup".
 // 7. Clique em "Run" (é um triângulo apontando para direita, entre um relógio
 //    e um inseto)

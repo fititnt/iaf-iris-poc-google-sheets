@@ -66,7 +66,7 @@
           <hr />
 
           <div id='success'></div>
-          <button type='submit' class="btn btn-primary">Submeter</button>
+          <button type='submit' class="btn btn-success">Submeter</button>
         </form>
         <hr />
 
@@ -78,19 +78,25 @@
       </div>
       <div class="tab-pane fade" id="configuracao" role="tabpanel" aria-labelledby="tab3"
         aria-hidden="true" tabindex="0">
-        <h2>Configuração</h2>
+        <h2>Configuração </h2>
+         <button id="configuracao-setar-teste" class="btn btn-primary">Usar planilha de dados de teste</button>
+
         <form id="form-configuracao">
           <p>
+            <label for="planilha-url">Planilha URL (não obrigatório)</label>
+            <em>Usado apenas para permitir link rápido na interface</em> <br>
+            <input id="planilha-url" name="planilha-url" type="text" class="form-control" value="">
+          </p>
+          <p>
             <label for="webapp-url">WebApp URL</label> <br>
-            <input id="webapp-url" name="webapp-url" type="text" value="" style="width: 800px"
-              required>
+            <input id="webapp-url" name="webapp-url" type="text" class="form-control" value="" required>
           </p>
           <p>
             <label for="pagina">Página da planilha a ser salvo</label> <br>
             <input id="configuracao-pagina-campo" name="pagina" type="text" value="eventos" required>
           </p>
 
-          <button id="salvar" class="btn btn-primary">Lembrar meus dados</button>
+          <button id="configuracao-salvar" class="btn btn-success">Lembrar dados acima neste navegador</button>
         </form>
       </div>
     </div>
