@@ -12,8 +12,28 @@ $('#salvar').on('click', function () {
 })
 
 
+/**
+ * Ajudante simples para exibir alerta na interface
+ *
+ * @param {string}  mensagem  Mensagem para ser exibida em tela
+ * @param {bool}    [isErro]  Se a mensagem é um aviso de erro. Opcional
+ */
+function uiAviso(mensagem, isErro) {
+  var classe = isErro ? 'danger': 'info', titulo = isErro ? 'Erro!' : 'Informação:';
+
+  jQuery('#avisos').html('\
+    <div class="alert alert-' + classe + ' alert-dismissible" role="alert"> \
+        <button type="button" class="close" data-dismiss="alert" aria-label="Fechar"><span aria-hidden="true">&times;</span></button> \
+        <strong>' + titulo + '</strong> ' + mensagem + ' \
+    </div>\
+  ');
+}
+
+
 // Bind to the submit event of our form
-$("#formulario").submit(function (event) {
+$("#form-enviar").submit(function (event) {
+
+  $('#enviar-pagina-campo').val($('#configuracao-pagina-campo').val())
 
   // Abort any pending request
   if (request) {
@@ -42,20 +62,28 @@ $("#formulario").submit(function (event) {
 
   // Callback handler that will be called on success
   request.done(function (response, textStatus, jqXHR) {
-    // Log a message to the console
-    console.log("Hooray, it worked!");
+    //console.log("Hooray, it worked!");
     console.log(response);
     console.log(textStatus);
     console.log(jqXHR);
+
+    if (response && response.error) {
+      uiAviso(JSON.stringify(response.error), true);
+    } else {
+      uiAviso(JSON.stringify(response));
+      $('#annotations').val('');
+    }
   });
 
   // Callback handler that will be called on failure
   request.fail(function (jqXHR, textStatus, errorThrown) {
     // Log the error to the console
     console.error(
-      "The following error occurred: " +
+      "O seguinte erro ocorreu: " +
       textStatus, errorThrown
     );
+
+    uiAviso(textStatus + '[' + errorThrown + ']', true);
   });
 
   // Callback handler that will be called regardless

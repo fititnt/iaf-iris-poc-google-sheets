@@ -9,11 +9,15 @@
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
   <link rel="stylesheet" href="./speech-input/speech-input.css">
+  <link rel="stylesheet" href="./estilo.css">
 </head>
 
 <body>
   <header class="container">
     <h1>Prova de Conceito</h1>
+    <div id="avisos">
+
+    </div>
   </header>
 
   <div id="myTab" class="container">
@@ -39,6 +43,7 @@
         <h2>Adicionar novo evento</h2>
 
         <form id="form-enviar">
+          <input type="hidden" name="pagina" id="enviar-pagina-campo" value="">
           <input type="hidden" name="id" value="" disabled>
           <input type="hidden" name="created" value="" disabled>
           <input type="hidden" name="updated" value="" disabled>
@@ -46,7 +51,7 @@
           <input type="hidden" name="medatada" value="">
           <p>
             <label for="annotations">Instrução</label> <br>
-            <input id="annotations" name="annotations" type="text" class="speech-input" style="width: 800px"
+            <input id="annotations" name="annotations" type="text" class="speech-input form-control"
               required>
           </p>
           <input type="hidden" name="param_datetime_1" value="">
@@ -61,7 +66,7 @@
           <hr />
 
           <div id='success'></div>
-          <button type='submit'>Submeter</button>
+          <button type='submit' class="btn btn-primary">Submeter</button>
         </form>
         <hr />
 
@@ -82,10 +87,10 @@
           </p>
           <p>
             <label for="pagina">Página da planilha a ser salvo</label> <br>
-            <input id="pagina" name="pagina" type="text" value="eventos" required>
+            <input id="configuracao-pagina-campo" name="pagina" type="text" value="eventos" required>
           </p>
 
-          <button id="salvar">Lembrar meus dados</button>
+          <button id="salvar" class="btn btn-primary">Lembrar meus dados</button>
         </form>
       </div>
     </div>
