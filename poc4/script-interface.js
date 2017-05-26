@@ -7,7 +7,7 @@ var planilhaPadrao = {
   pagina: 'eventos'
 }
 
-$('#form-configuracao').on('submit', function(event) {
+$('#form-configuracao').on('submit', function (event) {
   event.preventDefault();
 })
 
@@ -15,7 +15,13 @@ $('#form-configuracao').on('submit', function(event) {
 $('#configuracao-salvar').on('click', function () {
   localStorage.setItem('poc4-planilha-url', $('#planilha-url').val())
   localStorage.setItem('poc4-webapp-url', $('#webapp-url').val())
-  localStorage.setItem('poc4-pagina', $('#configuracao-pagina-campo').val())
+  localStorage.setItem('poc4-pagina', $('#configuracao-pagina-campo').val());
+
+  if (isUsandoPadrao()) {
+    $('#enviar-planilha-teste').show();
+  } else {
+    $('#enviar-planilha-teste').hide();
+  }
 })
 
 
@@ -26,7 +32,7 @@ $('#configuracao-salvar').on('click', function () {
  * @param {bool}    [isErro]  Se a mensagem é um aviso de erro. Opcional
  */
 function uiAviso(mensagem, isErro) {
-  var classe = isErro ? 'danger': 'info', titulo = isErro ? 'Erro!' : 'Informação:';
+  var classe = isErro ? 'danger' : 'info', titulo = isErro ? 'Erro!' : 'Informação:';
 
   jQuery('#avisos').html('\
     <div class="alert alert-' + classe + ' alert-dismissible" role="alert"> \
@@ -59,6 +65,7 @@ function setPlanilhaPadrao() {
   $('#planilha-url').val(planilhaPadrao.planilha);
   $('#webapp-url').val(planilhaPadrao.webapp);
   $('#configuracao-pagina-campo').val(planilhaPadrao.pagina);
+  $('#enviar-planilha-teste').show();
 }
 
 $('#configuracao-setar-teste').on('click', setPlanilhaPadrao);

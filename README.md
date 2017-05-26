@@ -22,3 +22,17 @@ Veja [a documentação da prova de conceito 2](poc2/).
 Acesse <https://fititnt.github.io/iaf-iris-poc-google-sheets/poc3/> para
 ver a versão atual. O formulário você deverá cadastrar com botão "Lembrar meus
 dados".
+
+
+## Prova de Conceito 4: Entrada por voz com comando salvo em planilha, variante
+Acesse <https://fititnt.github.io/iaf-iris-poc-google-sheets/poc4/> para
+ver a versão atual. O formulário você deverá cadastrar com botão "Lembrar meus
+dados".
+
+### Como usar a planilha padrão
+
+Na aba "Configuração" clique em "Usar planilha de dados de teste" e então em
+"Lembrar dados acima neste navegador". Na aba "Lembrar evento" ao fazer uma
+entrada de dados, ela será salva em <https://docs.google.com/spreadsheets/d/1QPmutg1CHlXCLe_gpIb0l9fK-BurGUMn4UvGOvHZS60/edit?usp=sharing>.
+
+É possível configurar uma planilha pessoal e reusar esse código fonte.

@@ -65,10 +65,15 @@
           <input type="hidden" name="param_string_3" value="">
           <hr />
 
-          <div id='success'></div>
-          <button type='submit' class="btn btn-success">Submeter</button>
+          <p id="enviar-planilha-teste" class="alert alert-warning" style="float: right; display: none"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+            <strong>Usando
+            planilha de teste</strong>: dados fornecidos aqui <a target="_blank"
+              href="https://docs.google.com/spreadsheets/d/1QPmutg1CHlXCLe_gpIb0l9fK-BurGUMn4UvGOvHZS60/edit?usp=sharing">serão acessíveis por outras pessoas nesta planilha</a></p>
+          <p id="enviar-planilha-prod" class="alert alert-info" style="float: right; display: none"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <strong>Usando planilha customizada</strong></p>
+
+          <button type='submit' class="btn btn-success"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Submeter</button>
         </form>
-        <hr />
 
       </div>
       <div class="tab-pane fade" id="ler-eventos" role="tabpanel" aria-labelledby="tab2"
@@ -79,7 +84,7 @@
       <div class="tab-pane fade" id="configuracao" role="tabpanel" aria-labelledby="tab3"
         aria-hidden="true" tabindex="0">
         <h2>Configuração </h2>
-         <button id="configuracao-setar-teste" class="btn btn-primary">Usar planilha de dados de teste</button>
+        <button id="configuracao-setar-teste" class="btn btn-primary"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Usar planilha de dados de teste</button>
 
         <form id="form-configuracao">
           <p>
@@ -89,7 +94,8 @@
           </p>
           <p>
             <label for="webapp-url">WebApp URL</label> <br>
-            <input id="webapp-url" name="webapp-url" type="text" class="form-control" value="" required>
+            <input id="webapp-url" name="webapp-url" type="text" class="form-control" value=""
+              required>
           </p>
           <p>
             <label for="pagina">Página da planilha a ser salvo</label> <br>
