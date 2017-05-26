@@ -1,5 +1,10 @@
 # Prova de Conceito de [IAF-Íris](https://github.com/fititnt/iaf-iris) com Google Planilhas
 
+> Idealmente essas provas de conceito são voltadas para pessoas com pouca ou
+> nenhuma experiência prévia com JavaScript, pois um dos objetivos é trazer
+> até familiares de pessoas que potencialmente precisam de Assistência Cognitiva
+> Pessoal para aprender sobre inteligência artificial.
+
 ## Exemplo Simples: salvar dados de formulário de contato
 
 Veja [a documentação do exemplo simples](simples/).
